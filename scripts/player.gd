@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var sprite = $PlayerSprite
 
 var character_direction: Vector2
-var 	last_direction: String = "right"
+var last_direction: String = "right"
 
 func _physics_process(delta: float) -> void:
 	character_direction.x = Input.get_axis("walk_left", "walk_right")
