@@ -10,10 +10,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAWAAEAAAABAAAAAgAWAAEAAAACAAAAAgAWAAE
 tile_set = ExtResource("1_o5qli")
 
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
-<<<<<<< Updated upstream
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-=======
 position = Vector2(-11, 7)
 movement_speed = 80.0
 
@@ -21,4 +17,3 @@ movement_speed = 80.0
 position = Vector2(11, -7)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
->>>>>>> Stashed changes
