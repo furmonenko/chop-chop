@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmpcasjri5bhb"]
+
+[ext_resource type="Texture2D" uid="uid://djwxflke8jkcq" path="res://assets/Butterflies.png" id="1_4ki4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq3rt"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o654m"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yym88"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42pi4"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6q6t"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpr2g"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oym5"]
+atlas = ExtResource("1_4ki4n")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwlwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq3rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o654m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yym88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42pi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6q6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpr2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oym5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kn8da"]
+radius = 2.0
+
+[node name="butterfly" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_lwlwe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_kn8da")
