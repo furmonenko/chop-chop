@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sfex48qjrmwf"
-path="res://.godot/imported/Crafting materials.png-44175e025d8bedf8afd2c7df81f1a87e.ctex"
+uid="uid://dd48ww1g4pcb2"
+path="res://.godot/imported/Smoke.png-9547129570f7877d2c507e57d6d0fb88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Crafting materials.png"
-dest_files=["res://.godot/imported/Crafting materials.png-44175e025d8bedf8afd2c7df81f1a87e.ctex"]
+source_file="res://assets/other/Smoke.png"
+dest_files=["res://.godot/imported/Smoke.png-9547129570f7877d2c507e57d6d0fb88.ctex"]
 
 [params]
 

@@ -5,9 +5,15 @@ extends CharacterBody2D
 
 var character_direction: Vector2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 var last_direction: String = "right"
 
 func _physics_process(delta: float) -> void:
+=======
+var 	last_direction: String = "right"
+
+func _physics_process(_delta: float) -> void:
+>>>>>>> Stashed changes
 =======
 var 	last_direction: String = "right"
 

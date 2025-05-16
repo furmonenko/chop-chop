@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dltx5o16udrbj"
-path="res://.godot/imported/bonfire.png-ff32d2a4f72aad8344924643ef6524fd.ctex"
+uid="uid://sfex48qjrmwf"
+path="res://.godot/imported/Crafting materials.png-b20cec6af6bb49f00af18c680663bc80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bonfire.png"
-dest_files=["res://.godot/imported/bonfire.png-ff32d2a4f72aad8344924643ef6524fd.ctex"]
+source_file="res://assets/other/Crafting materials.png"
+dest_files=["res://.godot/imported/Crafting materials.png-b20cec6af6bb49f00af18c680663bc80.ctex"]
 
 [params]
 
