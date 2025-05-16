@@ -1279,17 +1279,27 @@ sources/0 = SubResource("TileSetAtlasSource_oj1r6")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trceg"]
 texture = ExtResource("9_eb6dy")
 0:10/0 = 0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.5, 0, 5, 0, 5, 6.5, -5, 6.5)
 0:9/0 = 0
 0:15/0 = 0
+0:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -1.5, 8, -1.5, 8, -8, -7, -8)
 2:15/0 = 0
+2:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5, 8, -1.5, 8, -8, -8, -8)
 1:15/0 = 0
+1:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5, -1.5, -2.5, -1.5, 4, 8, 4, 8, -8, -8, -8)
 0:14/0 = 0
+0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, 3.5, 8, 2.5, 8, 8, -7, 8)
 1:14/0 = 0
+1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.5, 8, 2.5, 8, 8, -8, 8)
 2:14/0 = 0
+2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.5, 8, 2.5, 8, 8, -8, 8)
 3:14/0 = 0
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2, 2.5, 2.5, 6, 8, -8, 8)
 3:15/0 = 0
+3:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5, 3, -1.5, 5.5, -8, -8, -8)
 
 [sub_resource type="TileSet" id="TileSet_a8y0u"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_trceg")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acxp7"]
@@ -1359,7 +1369,7 @@ size = Vector2(945.5, 5)
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
 z_index = 1
 position = Vector2(-11, 7)
-movement_speed = 60.0
+movement_speed = 70.0
 
 [node name="Camera" type="Camera2D" parent="Player"]
 position = Vector2(11, -7)
@@ -1378,7 +1388,8 @@ tile_map_data = PackedByteArray("AAD4//7/AwABAAEAAAD6//7/AwACAAIAAAD///3/AwACAAE
 tile_set = SubResource("TileSet_l2n4a")
 
 [node name="stones" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAASAAkAAAACAAUAAAASAAoAAAACAAYAAAATAAkAAAADAAUAAAATAAoAAAADAAYAAAAQAAoAAAACAAUAAAAQAAsAAAACAAYAAAARAAoAAAADAAUAAAARAAsAAAADAAYAAAASAAwAAAACAAUAAAASAA0AAAACAAYAAAATAAwAAAADAAUAAAATAA0AAAADAAYAAAAOAAkAAAACAAcAAAAPAAkAAAADAAcAAAAPAA0AAAACAAcAAAAQAA0AAAADAAcAAAD0//3/AAACAAUAAAD0//7/AAACAAYAAAD1//3/AAADAAUAAAD1//7/AAADAAYAAADr//j/AAACAAUAAADr//n/AAACAAYAAADs//j/AAADAAUAAADs//n/AAADAAYAAADs/wQAAAACAAUAAADs/wUAAAACAAYAAADt/wQAAAADAAUAAADt/wUAAAADAAYAAAD2/wkAAAACAAUAAAD2/woAAAACAAYAAAD2/wsAAAACAAcAAAD3/wkAAAADAAUAAAD3/woAAAADAAYAAAD3/wsAAAADAAcAAADx/wEAAAACAAUAAADx/wIAAAACAAYAAADx/wMAAAACAAcAAADy/wEAAAADAAUAAADy/wIAAAADAAYAAADy/wMAAAADAAcAAAD+//n/AAACAAcAAAD///n/AAADAAcAAADm/wwAAAACAAMAAADm/w0AAAACAAQAAADn/wwAAAADAAMAAADn/w0AAAADAAQAAADs/wwAAAACAAMAAADs/w0AAAACAAQAAADt/wwAAAADAAMAAADt/w0AAAADAAQAAADp/wcAAAACAAMAAADp/wgAAAACAAQAAADq/wcAAAADAAMAAADq/wgAAAADAAQAAAD7/wUAAAACAAcAAAD8/wUAAAADAAcAAAD4////AAAEAAcAAAD5////AAAFAAcAAAA=")
+position = Vector2(12, 0)
+tile_map_data = PackedByteArray("AAASAAkAAAACAAUAAAASAAoAAAACAAYAAAATAAkAAAADAAUAAAATAAoAAAADAAYAAAAQAAoAAAACAAUAAAAQAAsAAAACAAYAAAARAAoAAAADAAUAAAARAAsAAAADAAYAAAASAAwAAAACAAUAAAASAA0AAAACAAYAAAATAAwAAAADAAUAAAATAA0AAAADAAYAAAAOAAkAAAACAAcAAAAPAAkAAAADAAcAAAAPAA0AAAACAAcAAAAQAA0AAAADAAcAAAD0//3/AAACAAUAAAD0//7/AAACAAYAAAD1//3/AAADAAUAAAD1//7/AAADAAYAAADr//j/AAACAAUAAADr//n/AAACAAYAAADs//j/AAADAAUAAADs//n/AAADAAYAAADs/wQAAAACAAUAAADs/wUAAAACAAYAAADt/wQAAAADAAUAAADt/wUAAAADAAYAAAD2/wkAAAACAAUAAAD2/woAAAACAAYAAAD2/wsAAAACAAcAAAD3/wkAAAADAAUAAAD3/woAAAADAAYAAAD3/wsAAAADAAcAAADx/wEAAAACAAUAAADx/wIAAAACAAYAAADx/wMAAAACAAcAAADy/wEAAAADAAUAAADy/wIAAAADAAYAAADy/wMAAAADAAcAAAD+//n/AAACAAcAAAD///n/AAADAAcAAADm/wwAAAACAAMAAADm/w0AAAACAAQAAADn/wwAAAADAAMAAADn/w0AAAADAAQAAADs/wwAAAACAAMAAADs/w0AAAACAAQAAADt/wwAAAADAAMAAADt/w0AAAADAAQAAADp/wcAAAACAAMAAADp/wgAAAACAAQAAADq/wcAAAADAAMAAADq/wgAAAADAAQAAAA=")
 tile_set = SubResource("TileSet_tob6u")
 
 [node name="dirt" type="TileMapLayer" parent="."]
@@ -1446,13 +1457,16 @@ position = Vector2(7.25, -25)
 shape = SubResource("RectangleShape2D_i7xxu")
 
 [node name="butterfly" parent="." instance=ExtResource("11_gqmmt")]
-position = Vector2(-331, 139)
+position = Vector2(-198, 79)
 
 [node name="butterfly2" parent="." instance=ExtResource("11_gqmmt")]
-position = Vector2(-316, 111)
+position = Vector2(-280, 175)
 
 [node name="butterfly3" parent="." instance=ExtResource("11_gqmmt")]
-position = Vector2(-319, 127)
+position = Vector2(-210, 131)
 
 [node name="butterfly4" parent="." instance=ExtResource("11_gqmmt")]
-position = Vector2(-332, 118)
+position = Vector2(-271, 125)
+
+[node name="butterfly5" parent="." instance=ExtResource("11_gqmmt")]
+position = Vector2(-320, 150)
