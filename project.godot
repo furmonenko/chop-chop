@@ -12,8 +12,12 @@ config_version=5
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 config/name="chop-chop 0.1"
 run/main_scene="uid://1w3et8xodfwv"
+=======
+config/name="chop-chop 0.2"
+>>>>>>> Stashed changes
 =======
 config/name="chop-chop 0.2"
 >>>>>>> Stashed changes
