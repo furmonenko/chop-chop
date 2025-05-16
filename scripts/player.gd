@@ -4,27 +4,9 @@ extends CharacterBody2D
 @onready var sprite = $PlayerSprite
 
 var character_direction: Vector2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-var last_direction: String = "right"
-
-func _physics_process(delta: float) -> void:
-=======
 var 	last_direction: String = "right"
 
 func _physics_process(_delta: float) -> void:
->>>>>>> Stashed changes
-=======
-var 	last_direction: String = "right"
-
-func _physics_process(_delta: float) -> void:
->>>>>>> Stashed changes
-=======
-var 	last_direction: String = "right"
-
-func _physics_process(_delta: float) -> void:
->>>>>>> Stashed changes
 	character_direction.x = Input.get_axis("walk_left", "walk_right")
 	character_direction.y = Input.get_axis("walk_up", "walk_down")
 
