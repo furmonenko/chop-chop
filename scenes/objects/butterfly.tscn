@@ -63,6 +63,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_1oym5")
 autoplay = "default"
 frame_progress = 0.245812

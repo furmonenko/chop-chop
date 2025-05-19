@@ -252,7 +252,9 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_yewv4")
+movement_speed = 50.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -262,3 +264,12 @@ shape = SubResource("CapsuleShape2D_4r5pv")
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_dg40j")
 animation = &"walk_down"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+limit_left = -303
+limit_top = -205
+limit_right = 286
+limit_bottom = 255
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
