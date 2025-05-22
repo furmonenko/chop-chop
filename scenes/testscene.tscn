@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxon4hvpwbia2"]
+
+[ext_resource type="PackedScene" uid="uid://dr3hm8awxl7nt" path="res://scenes/characters/player.tscn" id="2_l2n4a"]
+[ext_resource type="PackedScene" uid="uid://bcdm7n0ilfapu" path="res://scenes/objects/stone.tscn" id="3_65iv0"]
+[ext_resource type="PackedScene" uid="uid://bxsava0kac1jn" path="res://scenes/trees/birch_tree.tscn" id="3_ckmbu"]
+[ext_resource type="PackedScene" uid="uid://dily0e2v3i1hy" path="res://scenes/objects/moai.tscn" id="4_l2n4a"]
+[ext_resource type="PackedScene" uid="uid://dmpcasjri5bhb" path="res://scenes/objects/butterfly.tscn" id="5_ye8wr"]
+
+[node name="Testscene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -116.0
+offset_top = -110.0
+offset_right = 166.0
+offset_bottom = 158.0
+color = Color(0.336966, 0.823848, 0.407693, 1)
+
+[node name="enviroment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="enviroment" instance=ExtResource("2_l2n4a")]
+position = Vector2(20, -7)
+movement_speed = 70.0
+
+[node name="Camera2D2" type="Camera2D" parent="enviroment/Player"]
+
+[node name="trees" type="Node2D" parent="enviroment"]
+y_sort_enabled = true
+
+[node name="BirchTree" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
+position = Vector2(32, -17)
+
+[node name="BirchTree2" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
+position = Vector2(-9, 22)
+
+[node name="BirchTree3" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
+position = Vector2(28, 35)
+
+[node name="BirchTree4" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
+position = Vector2(55, 15)
+
+[node name="stone" parent="enviroment" instance=ExtResource("3_65iv0")]
+position = Vector2(-70, 24)
+
+[node name="stone2" parent="enviroment" instance=ExtResource("3_65iv0")]
+position = Vector2(-90, -4)
+
+[node name="stone3" parent="enviroment" instance=ExtResource("3_65iv0")]
+position = Vector2(-60, -5)
+
+[node name="moai" parent="enviroment" instance=ExtResource("4_l2n4a")]
+position = Vector2(-42, -35)
+
+[node name="butterfly" parent="enviroment" instance=ExtResource("5_ye8wr")]
+y_sort_enabled = true
+position = Vector2(59, -44)
+
+[node name="butterfly2" parent="enviroment" instance=ExtResource("5_ye8wr")]
+y_sort_enabled = true
+position = Vector2(72, -37)
+
+[node name="butterfly3" parent="enviroment" instance=ExtResource("5_ye8wr")]
+y_sort_enabled = true
+position = Vector2(68, -53)
+
+[node name="butterfly4" parent="enviroment" instance=ExtResource("5_ye8wr")]
+y_sort_enabled = true
+position = Vector2(54, -59)
+
+[node name="butterfly5" parent="enviroment" instance=ExtResource("5_ye8wr")]
+y_sort_enabled = true
+position = Vector2(69, -74)
