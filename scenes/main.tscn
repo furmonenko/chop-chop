@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cpi2qeayhc42y" path="res://assets/Tileset/tileset_grass_summer.png" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://dg841elxlh4qd" path="res://assets/testassets/Tiles/Tileset_16x16.png" id="2_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://smunfnwvpy6r" path="res://scenes/objects/bonfire.tscn" id="3_trceg"]
+[ext_resource type="PackedScene" uid="uid://cmj1248aox10h" path="res://scenes/testscenes/bonfire.tscn" id="3_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://b4ik5ve5desil" path="res://assets/other/Stones Summer.png" id="4_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dr3hm8awxl7nt" path="res://scenes/characters/player.tscn" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dily0e2v3i1hy" path="res://scenes/objects/moai.tscn" id="6_jbj1t"]
@@ -267,8 +267,8 @@ tile_set = SubResource("TileSet_ckso1")
 [node name="environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="bonfire" parent="environment" instance=ExtResource("3_trceg")]
-position = Vector2(45, 79)
+[node name="bonfire" parent="environment" instance=ExtResource("3_eb6dy")]
+position = Vector2(46, 78)
 
 [node name="stones" type="TileMapLayer" parent="environment"]
 y_sort_enabled = true
@@ -276,7 +276,7 @@ tile_map_data = PackedByteArray("AAD7//3/AAACAAUAAAD7//7/AAACAAYAAAD8//3/AAADAAU
 tile_set = SubResource("TileSet_c43nl")
 
 [node name="Player" parent="environment" instance=ExtResource("5_jkv2x")]
-position = Vector2(16, 189)
+position = Vector2(-222, -113)
 movement_speed = 70.0
 
 [node name="moai" parent="environment" instance=ExtResource("6_jbj1t")]
@@ -391,3 +391,5 @@ shape = SubResource("RectangleShape2D_5oxa2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blockers/bottom"]
 position = Vector2(-8.5, 257)
 shape = SubResource("RectangleShape2D_eib61")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

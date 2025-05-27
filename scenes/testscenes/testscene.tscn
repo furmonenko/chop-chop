@@ -1,10 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxon4hvpwbia2"]
+[gd_scene load_steps=10 format=4 uid="uid://dxon4hvpwbia2"]
 
-[ext_resource type="PackedScene" uid="uid://dr3hm8awxl7nt" path="res://scenes/characters/player.tscn" id="2_l2n4a"]
 [ext_resource type="PackedScene" uid="uid://bcdm7n0ilfapu" path="res://scenes/objects/stone.tscn" id="3_65iv0"]
-[ext_resource type="PackedScene" uid="uid://bxsava0kac1jn" path="res://scenes/trees/birch_tree.tscn" id="3_ckmbu"]
 [ext_resource type="PackedScene" uid="uid://dily0e2v3i1hy" path="res://scenes/objects/moai.tscn" id="4_l2n4a"]
+[ext_resource type="PackedScene" uid="uid://bnnxlc5ghyy1a" path="res://scenes/testscenes/testplayer.tscn" id="5_si50o"]
 [ext_resource type="PackedScene" uid="uid://dmpcasjri5bhb" path="res://scenes/objects/butterfly.tscn" id="5_ye8wr"]
+[ext_resource type="Texture2D" uid="uid://cpi2qeayhc42y" path="res://assets/Tileset/tileset_grass_summer.png" id="6_ckmbu"]
+[ext_resource type="PackedScene" uid="uid://cxbh66piasrfp" path="res://scenes/testscenes/testtree.tscn" id="6_pkoty"]
+[ext_resource type="PackedScene" uid="uid://cmj1248aox10h" path="res://scenes/testscenes/bonfire.tscn" id="7_pkoty"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7smk"]
+texture = ExtResource("6_ckmbu")
+0:8/0 = 0
+2:8/0 = 0
+1:8/0 = 0
+2:9/0 = 0
+2:10/0 = 0
+1:10/0 = 0
+0:10/0 = 0
+0:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_acxp7"]
+sources/0 = SubResource("TileSetAtlasSource_p7smk")
 
 [node name="Testscene" type="Node2D"]
 
@@ -17,27 +33,6 @@ color = Color(0.336966, 0.823848, 0.407693, 1)
 
 [node name="enviroment" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="Player" parent="enviroment" instance=ExtResource("2_l2n4a")]
-position = Vector2(20, -7)
-movement_speed = 70.0
-
-[node name="Camera2D2" type="Camera2D" parent="enviroment/Player"]
-
-[node name="trees" type="Node2D" parent="enviroment"]
-y_sort_enabled = true
-
-[node name="BirchTree" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
-position = Vector2(32, -17)
-
-[node name="BirchTree2" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
-position = Vector2(-9, 22)
-
-[node name="BirchTree3" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
-position = Vector2(28, 35)
-
-[node name="BirchTree4" parent="enviroment/trees" instance=ExtResource("3_ckmbu")]
-position = Vector2(55, 15)
 
 [node name="stone" parent="enviroment" instance=ExtResource("3_65iv0")]
 position = Vector2(-70, 24)
@@ -70,3 +65,20 @@ position = Vector2(54, -59)
 [node name="butterfly5" parent="enviroment" instance=ExtResource("5_ye8wr")]
 y_sort_enabled = true
 position = Vector2(69, -74)
+
+[node name="Player" parent="enviroment" instance=ExtResource("5_si50o")]
+position = Vector2(56, 35)
+
+[node name="testtree" parent="enviroment" instance=ExtResource("6_pkoty")]
+position = Vector2(-17, 76)
+
+[node name="testtree2" parent="enviroment" instance=ExtResource("6_pkoty")]
+position = Vector2(29, -4)
+
+[node name="bonfire" parent="enviroment" instance=ExtResource("7_pkoty")]
+position = Vector2(1, 36)
+burn_duration = 30.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5/wkAAAAAAAgAAAD6/wkAAAABAAgAAAD7/wkAAAABAAgAAAD8/wkAAAABAAgAAAD9/wkAAAABAAgAAAD+/wkAAAABAAgAAAD//wkAAAABAAgAAAAAAAoAAAABAAoAAAA=")
+tile_set = SubResource("TileSet_acxp7")
