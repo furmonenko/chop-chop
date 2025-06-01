@@ -1,39 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmj1248aox10h"]
+[gd_scene load_steps=16 format=3 uid="uid://cmj1248aox10h"]
 
 [ext_resource type="Texture2D" uid="uid://cf71p2yw8fl7t" path="res://assets/other/bonfire-Sheet-export.png" id="1_8yxa0"]
 [ext_resource type="Script" uid="uid://ds3cx14lddksi" path="res://scripts/testbonfire.gd" id="1_gkkp7"]
 [ext_resource type="Texture2D" uid="uid://dltx5o16udrbj" path="res://assets/other/bonfire.png" id="2_mjsnc"]
-[ext_resource type="Texture2D" uid="uid://cch0p3rmbb0kh" path="res://assets/animations/gameover.png" id="3_af0on"]
 [ext_resource type="Texture2D" uid="uid://cg20fxgro6gcm" path="res://assets/UI/testbar2.png" id="4_oqwxp"]
 [ext_resource type="AudioStream" uid="uid://77mtmldcpk5y" path="res://assets/sounds/campfire.ogg" id="5_biy7p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvy3k"]
 atlas = ExtResource("1_8yxa0")
 region = Rect2(80, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_djukl"]
-atlas = ExtResource("3_af0on")
-region = Rect2(0, 0, 192, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4vfi"]
-atlas = ExtResource("3_af0on")
-region = Rect2(192, 0, 192, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8kg5"]
-atlas = ExtResource("3_af0on")
-region = Rect2(384, 0, 192, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0nkc"]
-atlas = ExtResource("3_af0on")
-region = Rect2(576, 0, 192, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0c8k"]
-atlas = ExtResource("3_af0on")
-region = Rect2(768, 0, 192, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d3t01"]
-atlas = ExtResource("3_af0on")
-region = Rect2(960, 0, 192, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjsnc"]
 atlas = ExtResource("1_8yxa0")
@@ -68,29 +43,6 @@ animations = [{
 "loop": false,
 "name": &"death",
 "speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_djukl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4vfi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p8kg5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m0nkc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v0c8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d3t01")
-}],
-"loop": true,
-"name": &"game_over",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -129,7 +81,7 @@ burn_duration = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wftjl")
-animation = &"game_over"
+animation = &"death"
 autoplay = "idle"
 offset = Vector2(0, -10)
 
@@ -143,10 +95,16 @@ shape = SubResource("CircleShape2D_4fgjc")
 disabled = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(30, 10)
+anchors_preset = -1
 offset_left = -8.0
-offset_top = -26.0
-offset_right = 8.0
-offset_bottom = -10.0
+offset_top = -24.0
+offset_right = 22.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 max_value = 30.0
 value = 30.0
 texture_progress = ExtResource("4_oqwxp")
@@ -154,7 +112,6 @@ texture_progress = ExtResource("4_oqwxp")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 y_sort_enabled = true
 stream = ExtResource("5_biy7p")
-volume_db = -10.0
 autoplay = true
 max_distance = 200.0
 bus = &"SFX"
