@@ -96,7 +96,6 @@ disabled = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(30, 10)
-anchors_preset = -1
 offset_left = -8.0
 offset_top = -24.0
 offset_right = 22.0
@@ -112,6 +111,7 @@ texture_progress = ExtResource("4_oqwxp")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 y_sort_enabled = true
 stream = ExtResource("5_biy7p")
+volume_db = -24.0
 autoplay = true
 max_distance = 200.0
 bus = &"SFX"
