@@ -29,11 +29,9 @@ func start_fire():
 
 func extinguish():
 	is_burning = false
-	anim.play("death")
-	#anim.play("game_over")
 	progress_bar.visible = false
 	audio.stop()
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/testscenes/game_over_ui.tscn")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

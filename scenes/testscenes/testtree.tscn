@@ -74,7 +74,7 @@ script = ExtResource("1_dill8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_07u6f")
-animation = &"idle"
+animation = &"chop"
 autoplay = "idle"
 offset = Vector2(0, -10)
 
