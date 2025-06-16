@@ -4,11 +4,16 @@ extends StaticBody2D
 var current_hits: int = 0
 var is_chopped: bool = false
 
+
 @onready var sprite: AnimatedSprite2D = $animation
+@onready var collider: CollisionShape2D = $CollisionShape2D
+@onready var tree_timer: Timer = $Timer
 
 func _ready():
 	current_hits = 0
 	
+#func chop(): # стара версія
+
 func chop():
 	if is_chopped:
 		return
@@ -22,12 +27,16 @@ func chop():
 	
 	if current_hits >= max_hits:
 		is_chopped = true
-		sprite.play("death")
-		await sprite.animation_finished
-		hide()
-		_spawn_log()
+		#sprite.play("death")
+		#await sprite.animation_finished
 		
-		await get_tree().create_timer(10).timeout
+		_spawn_log()
+		sprite.hide()
+		collider.disabled = true
+		tree_timer.start(5)
+		
+		
+		#await get_tree().create_timer(10).timeout
 		
 		is_chopped = false
 		current_hits = 0
@@ -35,6 +44,32 @@ func chop():
 		sprite.play("idle")
 	else:
 		sprite.play("idle")
+
+	#if is_chopped:
+		#return
+		#
+	#current_hits += 1
+	#$AudioStreamPlayer2D.play()
+	#
+	#print("Tree hit:", current_hits, "/", max_hits)
+	#sprite.play("chop")
+	#await sprite.animation_finished
+	#
+	#if current_hits >= max_hits:
+		#is_chopped = true
+		#sprite.play("death")
+		#await sprite.animation_finished
+		#hide()
+		#_spawn_log()
+		#
+		#await get_tree().create_timer(10).timeout
+		#
+		#is_chopped = false
+		#current_hits = 0
+		#show()
+		#sprite.play("idle")
+	#else:
+		#sprite.play("idle")
 #func respawn_tree():
 	#await get_tree().create_timer(60).timeout
 	#current_hits = 0
@@ -54,3 +89,7 @@ func _spawn_log():
 	#var log_instance = log_scene.instantiate()
 	#get_parent().add_child(log_instance)
 	#log_instance.global_position = global_position + Vector2(8, 0)
+func _on_timer_timeout() -> void:
+	sprite.show()
+	collider.disabled = false
+	current_hits = 0

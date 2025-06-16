@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bi6e5ksb72y34"]
+[gd_scene load_steps=27 format=4 uid="uid://bi6e5ksb72y34"]
 
 [ext_resource type="Script" uid="uid://dloou53y0gt4m" path="res://scripts/main.gd" id="1_trceg"]
 [ext_resource type="Texture2D" uid="uid://cpi2qeayhc42y" path="res://assets/Tileset/tileset_grass_summer.png" id="1_ya4ey"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://budsajbcegmaj" path="res://scenes/trees/pine_tree.tscn" id="11_yc10j"]
 [ext_resource type="PackedScene" uid="uid://dyq1ux5n7djar" path="res://scenes/ui/counter.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://c11uw0kk2l20o" path="res://scenes/ui/hint_ui.tscn" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://3agte45detxp" path="res://scenes/trees/testtree.tscn" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6rtf"]
 texture = ExtResource("1_ya4ey")
@@ -413,3 +414,9 @@ volume_db = -10.0
 [node name="HUD" parent="." instance=ExtResource("12_eb6dy")]
 
 [node name="HintUI" parent="." instance=ExtResource("14_a8y0u")]
+
+[node name="BirchTree" parent="." instance=ExtResource("15_jkv2x")]
+position = Vector2(-241, -157)
+
+[node name="BirchTree2" parent="." instance=ExtResource("15_jkv2x")]
+position = Vector2(-114, -158)

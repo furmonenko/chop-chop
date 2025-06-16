@@ -91,3 +91,7 @@ shape = SubResource("CircleShape2D_72q4l")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_u7rn1")
 volume_db = -15.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
