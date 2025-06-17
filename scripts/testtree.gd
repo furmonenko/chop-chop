@@ -31,7 +31,7 @@ func chop():
 		_spawn_log()
 		sprite.hide()
 		collider.disabled = true
-		tree_timer.start(5)
+		tree_timer.start(30)
 		
 		
 		#await get_tree().create_timer(10).timeout

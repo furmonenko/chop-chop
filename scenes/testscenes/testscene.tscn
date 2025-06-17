@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dmpcasjri5bhb" path="res://scenes/objects/butterfly.tscn" id="5_ye8wr"]
 [ext_resource type="Texture2D" uid="uid://cpi2qeayhc42y" path="res://assets/Tileset/tileset_grass_summer.png" id="6_ckmbu"]
 [ext_resource type="PackedScene" uid="uid://dr3hm8awxl7nt" path="res://scenes/characters/player.tscn" id="7_co280"]
-[ext_resource type="PackedScene" uid="uid://cmj1248aox10h" path="res://scenes/testscenes/bonfire.tscn" id="7_pkoty"]
+[ext_resource type="PackedScene" uid="uid://cmj1248aox10h" path="res://scenes/objects/bonfire.tscn" id="7_pkoty"]
 [ext_resource type="PackedScene" uid="uid://bmqnpd8pwnq8w" path="res://scenes/trees/mahogany_tree.tscn" id="8_u5yte"]
 [ext_resource type="PackedScene" uid="uid://5qox1buegb3p" path="res://scenes/trees/maple_tree.tscn" id="9_2yte1"]
 [ext_resource type="PackedScene" uid="uid://budsajbcegmaj" path="res://scenes/trees/pine_tree.tscn" id="10_311yb"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 100
 @onready var animation := $PlayerSprite
-
+var campfire_in_range: Node = null
 var facing_direction := "down"
 var tree_in_range: Node = null
 var is_chopping: bool = false
@@ -18,12 +18,17 @@ func _on_body_entered(body):
 	if body.is_in_group("trees"):
 		print("Tree detected!")
 		tree_in_range = body
+	if body.is_in_group("campfires"):
+		campfire_in_range = body
 
 func _on_body_exited(body):
 	#if body == tree_in_range:
 	if body.is_in_group("trees"):
 		print("Tree out of range.")
-		#tree_in_range = null
+		tree_in_range = null
+	if body.is_in_group("campfires"):
+		print("Campfire out of range.")
+		campfire_in_range = null
 
 func _on_area_entered(area):
 	print("Area entered:", area)
@@ -86,7 +91,7 @@ func _input(event):
 	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		is_chopping = true
-		await _play_chop_animation()
+		#await _play_chop_animation()
 		
 		if tree_in_range:
 			print("Tree in range:", tree_in_range)
@@ -96,8 +101,17 @@ func _input(event):
 				print("This object has no method 'chop'")
 		else:
 			print("No tree in range.")
+			
+		await _play_chop_animation()	
 		is_chopping = false	
-
+	
+	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
+		if campfire_in_range:
+			var hud = get_tree().get_root().find_child("HUD", true, false)
+			if hud.log_count > 0:
+				campfire_in_range.add_fire()
+				hud.remove_log()
+	
 func _play_chop_animation():
 	#if is_chopping:
 		#return

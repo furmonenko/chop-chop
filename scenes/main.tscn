@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=4 uid="uid://bi6e5ksb72y34"]
+[gd_scene load_steps=26 format=4 uid="uid://bi6e5ksb72y34"]
 
 [ext_resource type="Script" uid="uid://dloou53y0gt4m" path="res://scripts/main.gd" id="1_trceg"]
 [ext_resource type="Texture2D" uid="uid://cpi2qeayhc42y" path="res://assets/Tileset/tileset_grass_summer.png" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://dg841elxlh4qd" path="res://assets/testassets/Tiles/Tileset_16x16.png" id="2_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://cmj1248aox10h" path="res://scenes/testscenes/bonfire.tscn" id="3_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://b4ik5ve5desil" path="res://assets/other/Stones Summer.png" id="4_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dr3hm8awxl7nt" path="res://scenes/characters/player.tscn" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dily0e2v3i1hy" path="res://scenes/objects/moai.tscn" id="6_jbj1t"]
@@ -13,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://5qox1buegb3p" path="res://scenes/trees/maple_tree.tscn" id="10_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://budsajbcegmaj" path="res://scenes/trees/pine_tree.tscn" id="11_yc10j"]
 [ext_resource type="PackedScene" uid="uid://dyq1ux5n7djar" path="res://scenes/ui/counter.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ddw1dbu811del" path="res://scenes/objects/testbonfire.tscn" id="13_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://c11uw0kk2l20o" path="res://scenes/ui/hint_ui.tscn" id="14_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://3agte45detxp" path="res://scenes/trees/testtree.tscn" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6rtf"]
 texture = ExtResource("1_ya4ey")
@@ -272,8 +271,8 @@ tile_set = SubResource("TileSet_ckso1")
 [node name="environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="bonfire" parent="environment" instance=ExtResource("3_eb6dy")]
-position = Vector2(46, 78)
+[node name="bonfire" parent="environment" instance=ExtResource("13_jkv2x")]
+position = Vector2(45, 80)
 
 [node name="stones" type="TileMapLayer" parent="environment"]
 y_sort_enabled = true
@@ -281,7 +280,7 @@ tile_map_data = PackedByteArray("AAD7//3/AAACAAUAAAD7//7/AAACAAYAAAD8//3/AAADAAU
 tile_set = SubResource("TileSet_c43nl")
 
 [node name="Player" parent="environment" instance=ExtResource("5_jkv2x")]
-position = Vector2(-279, -146)
+position = Vector2(255, 210)
 
 [node name="moai" parent="environment" instance=ExtResource("6_jbj1t")]
 position = Vector2(-211, 180)
@@ -332,7 +331,7 @@ position = Vector2(38, -5)
 position = Vector2(139, 145)
 
 [node name="BirchTree" parent="environment/trees" instance=ExtResource("9_0ld40")]
-position = Vector2(-11, 68)
+position = Vector2(-34, 59)
 
 [node name="BirchTree2" parent="environment/trees" instance=ExtResource("9_0ld40")]
 position = Vector2(162, 190)
@@ -414,9 +413,3 @@ volume_db = -10.0
 [node name="HUD" parent="." instance=ExtResource("12_eb6dy")]
 
 [node name="HintUI" parent="." instance=ExtResource("14_a8y0u")]
-
-[node name="BirchTree" parent="." instance=ExtResource("15_jkv2x")]
-position = Vector2(-241, -157)
-
-[node name="BirchTree2" parent="." instance=ExtResource("15_jkv2x")]
-position = Vector2(-114, -158)

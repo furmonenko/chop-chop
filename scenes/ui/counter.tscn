@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfh0laqldfi71" path="res://scripts/canvas_layer.gd" id="1_sgtu5"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Counter" type="CanvasLayer"]
 script = ExtResource("1_sgtu5")
 
 [node name="LogsLabel" type="Label" parent="."]
