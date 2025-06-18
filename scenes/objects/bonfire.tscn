@@ -102,16 +102,16 @@ max_distance = 200.0
 bus = &"SFX"
 
 [node name="Hint" type="Label" parent="."]
-visible = false
 texture_filter = 1
 offset_left = -50.0
-offset_top = -35.0
+offset_top = -40.0
 offset_right = 50.0
-offset_bottom = -12.0
+offset_bottom = -17.0
 theme_override_font_sizes/font_size = 12
 text = "Press E to put log"
 
 [node name="ProgressBar" parent="." instance=ExtResource("5_5150a")]
+value = 100.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

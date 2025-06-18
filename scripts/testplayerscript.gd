@@ -6,12 +6,28 @@ var campfire_in_range: Node = null
 var facing_direction := "down"
 var tree_in_range: Node = null
 var is_chopping: bool = false
+var has_chopped: bool = false
+
 
 func _ready():
 	$Area2D.connect("body_entered", _on_body_entered)
 	$Area2D.connect("body_exited", _on_body_exited)
 	$Area2D.connect("area_entered", _on_area_entered)
 	$Area2D.connect("area_exited", _on_area_exited)
+	animation.connect("frame_changed", _on_frame_changed)
+
+func _on_frame_changed():
+	if animation.animation.begins_with("chop_") and animation.frame == 2 and not has_chopped:
+		if tree_in_range and tree_in_range.has_method("chop"):
+			tree_in_range.chop()
+		has_chopped = true
+	#if not is_chopping or has_chopped:
+		#return
+		#
+	#if animation.animation == "chop_" + facing_direction and animation.frame == 2:
+		#if tree_in_range and tree_in_range.has_method("chop"):
+			#tree_in_range.chop() 
+			#has_chopped = true
 
 func _on_body_entered(body):
 	print("Body entered:", body)
@@ -91,26 +107,43 @@ func _input(event):
 	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		is_chopping = true
-		#await _play_chop_animation()
-		
-		if tree_in_range:
-			print("Tree in range:", tree_in_range)
-			if tree_in_range.has_method("chop"):
-				tree_in_range.chop()
-			else:
-				print("This object has no method 'chop'")
-		else:
-			print("No tree in range.")
-			
-		await _play_chop_animation()	
-		is_chopping = false	
-	
+		has_chopped = false
+		await _play_chop_animation()
+		is_chopping = false
+
 	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
 		if campfire_in_range:
 			var hud = get_tree().get_root().find_child("HUD", true, false)
 			if hud.log_count > 0:
 				campfire_in_range.add_fire()
 				hud.remove_log()
+	#if is_chopping:
+		#return
+	#
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		#is_chopping = true
+		#has_chopped = false
+		#await _play_chop_animation()
+		#is_chopping = false
+		#
+		#if tree_in_range:
+			#print("Tree in range:", tree_in_range)
+			#if tree_in_range.has_method("chop"):
+				#tree_in_range.chop()
+			#else:
+				#print("This object has no method 'chop'")
+		#else:
+			#print("No tree in range.")
+			#
+		#await _play_chop_animation()	
+		#is_chopping = false	
+	#
+	#if event is InputEventKey and event.pressed and event.keycode == KEY_E:
+		#if campfire_in_range:
+			#var hud = get_tree().get_root().find_child("HUD", true, false)
+			#if hud.log_count > 0:
+				#campfire_in_range.add_fire()
+				#hud.remove_log()
 	
 func _play_chop_animation():
 	#if is_chopping:
